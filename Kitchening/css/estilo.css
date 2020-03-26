@@ -1,0 +1,170 @@
+/* border box e fonte Poppins aplicados em todo o documento */
+
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* Imagem de fundo aplicada */
+
+body {
+    background-image: url(../img/bg-body.png);
+    background-attachment: fixed;
+}
+
+
+/* Classe que contém a barra de navegação, main e rodapé */
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+/* Imagem da barra de navegação e imagens da Main */
+
+img.container {
+    display: block;
+    margin-bottom: 20px;
+}
+
+
+/* Cabeçalho que contém imagem logo e barra de navegação */
+
+header.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+/* Imagem logo */
+
+header img {
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+
+/* Barra de navegação e rodapé */
+
+nav {
+    width: 100%;
+}
+
+
+/* Lista não ordenada de links da barra de navegação */
+
+header nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+}
+
+
+/* elementos links da barra de navegação */
+
+header nav ul li {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: calc((100% - 100px)/6);
+    background-color: #333;
+}
+
+
+/* links da barra de navegação */
+
+header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+/* div que engloba todos os produtos, suas imagens e descrição */
+
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+/* divs de cada produto, com suas imagens e descrição  */
+
+main .produto {
+    width: calc((100% - 40px) / 3);
+    margin-bottom: 20px;
+}
+
+
+/* Imagem de cada produto */
+
+main .produto img {
+    width: 100%;
+}
+
+
+/* link "Ver Mais" de cada produto */
+
+main div a {
+    text-decoration: none;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+
+/* rodapé */
+
+footer nav {
+    background-color: rgb(150, 9, 0);
+    position: fixed;
+    width: 90%;
+    border-radius: 15px 15px 0 0;
+    bottom: 0;
+}
+
+
+/* Lista não ordenada do rodapé */
+
+footer nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+}
+
+
+/* elementos da lista não ordenada do rodapé */
+
+footer nav ul li {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1% 0 1%;
+    border-right: 1px solid white;
+}
+
+
+/* Aplica borda direita em todos links de navegação do rodapé */
+
+footer nav ul li:nth-child(6) {
+    border-right: none;
+}
+
+
+/* Remove a borda do último link de navegação do rodapé */
+
+footer nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}

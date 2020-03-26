@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+
+/* Aplicações de estruturação e fonte em todo o corpo */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: bolder;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+
+/* Div que engloba todas as informações de cada herói */
+
+.perfil {
+    width: 400px;
+    height: 600px;
+    background-color: #F0F0F0;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 75px 0 75px 0;
+}
+
+
+/* Imagem do herói, nome e botões "add" e "send" */
+
+.head {
+    background-color: #38AEFF;
+    position: relative;
+    border-radius: 75px 0 0px 0;
+}
+
+
+/* Imagem do herói */
+
+.head img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 20px;
+}
+
+
+/* div que engloba os botões "add" e "send" */
+
+.head div {
+    position: absolute;
+    bottom: -24px;
+    right: 20px;
+}
+
+
+/* Botões "add" e "send" */
+
+.head button {
+    color: white;
+    background-color: #336FE8;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-left: 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+
+/* Nome do herói */
+
+.head h2 {
+    color: white;
+    margin-right: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: -1.2rem;
+    top: 50%;
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: 'Liu Jian Mao Cao';
+}
+
+
+/* Div que engloba os elementos da descrição do herói */
+
+.body {
+    padding: 20px;
+}
+
+
+/* Divs com o nome e descrição de cada herói */
+
+.body div {
+    margin-bottom: 0.5rem;
+}

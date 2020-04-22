@@ -1,0 +1,28 @@
+<%- include('parts/head',{title:'Pizzaria Fantástica'}); %>
+	<link rel="stylesheet" href="/css/index.css">
+	<form id="form" action="/busca" method="get">
+		<input type="text" name="q" placeholder="Qual pizza você procura?" autocomplete="off" value="<%= busca %>">
+		<button type="submit">Buscar</button>
+	</form>
+
+	<% if(pizzas.length > 0) { %>
+
+	<main>
+		<% for(let pizza of pizzas){ %>
+		<article>
+			<img src="<%= pizza.img %>" alt="<%= pizza.nome %>">
+			<form action="/carrinho" method="POST">
+				<input type="hidden" name="id" value="<%= pizza.id %>">
+				<button type="submit"> add </button>
+			</form>
+			<a href="/pizzas/<%= pizza.id %>">Ver Mais</a>
+			<div><%= pizza.nome %></div>
+			<span><%= pizza.preco.toLocaleString('pt-br', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }) %></span>
+		</article>
+		<% } %>
+	</main>
+
+	<%} else { %>
+		<div class="pizza-nao-encontrada">Nenhuma pizza encontrada. Tente ser menos específico na sua busca.</div>
+	<% } %>
+	<%- include('parts/foot'); %>

@@ -1,0 +1,36 @@
+<%- include('../parts/head',{title:'Pizzaria Fantástica - Editando Pizza'}); %>
+<link rel="stylesheet" href="/css/form-pizza.css">
+<form id="form-pizza" method="POST" action="/user/<%= user.id%>/update?_method=PUT" enctype="multipart/form-data">
+	<label>
+		Nome:
+		<input type="text" name="nome" id="nome" value="<%= user.nome %>" placeholder="Digite o novo nome" required>
+	</label>
+
+	<label>
+		E-mail:
+		<input type="email" name="email" value="<%= user.email %>" id="email"
+			placeholder="Digite o novo E-mail" required>
+	</label>
+
+	<label>
+		Confirme a senha:
+		<input type="password" name="confirmarSenha" id="confirmarSenha"
+			placeholder="Confirme a sua senha" required>
+	</label>
+
+	<label>
+		Nova senha:
+		<input type="password" name="senha" id="senha" 
+			placeholder="Digite a sua nova senha" required>
+	</label>
+
+	<label>
+		Foto:
+		<img src="<%= user.img %>" alt="<%= user.nome %>">
+		<div>Clique para selecione nova imagem</div>
+		<input type="file" name="img" id="img" required>
+	</label>
+
+	<button type="submit">Salvar</button>
+</form>
+<%- include('../parts/foot'); %>

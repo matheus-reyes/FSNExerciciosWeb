@@ -1,0 +1,21 @@
+<%- include('parts/head',{title:'Pizzaria Fantástica'}); %>
+	<link rel="stylesheet" href="/css/index.css">
+	<form id="form-busca" action="/pizzas/busca/" method="GET">
+		<input type="text" name="busca" placeholder="Qual pizza você procura?" autocomplete="off">
+		<button type="submit">Buscar</button>
+	</form>
+	<main>
+		<% for(let pizza of pizzas){ %>
+		<article>
+			<img src="<%= pizza.img %>" alt="<%= pizza.nome %>">
+			<a href="/pizzas/<%= pizza.id %>">Ver Mais</a>
+			<form action="/pedidos/add" method="POST">
+				<input type="hidden" name="idPizza" value="<%= pizza.id %>">
+				<button type="submit">+ Add</button>
+			</form>
+			<div><%= pizza.nome %></div>
+			<span><%= pizza.preco.toLocaleString('pt-br', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }) %></span>
+		</article>
+		<% } %>
+	</main>
+	<%- include('parts/foot'); %>

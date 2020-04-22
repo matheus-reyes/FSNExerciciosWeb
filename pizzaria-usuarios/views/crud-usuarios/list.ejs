@@ -1,0 +1,26 @@
+<%- include('../parts/head',{title:'Pizzaria Fantástica'}); %>
+<link rel="stylesheet" href="/css/list-pizza.css">
+<div id="list-pizza">
+	<a href="/users/create">Adicionar novo usuário</a>
+	<table>
+		<tbody>
+			<% for(let user of users ) { %>
+			<tr>
+				<td>
+					<img src="<%= user.img %>" alt="<%= user.nome %>"></td>
+				<td><%= user.nome %></td>
+				<td>
+					<%= user.email %>
+				</td>
+				<td>
+					<form method="POST" action="/user/<%= user.id %>/delete?_method=DELETE">
+						<button type="submit">Remover</button>
+					</form>
+					<a href="/user/<%= user.id %>/edit">Editar</button>
+				</td>
+			</tr>
+			<% } %>
+		</tbody>
+	</table>
+</div>
+<%- include('../parts/foot'); %>

@@ -1,0 +1,16 @@
+<%- include('./parts/head',{title:'Pizzaria Fantástica - Editando Pizza'}); %>
+<link rel="stylesheet" href="/css/form-pizza.css">
+<form id="form-pizza" method="POST" action="/login">
+    <label>
+		E-mail:
+		<input type="email" name="email" id="email" placeholder="Digite seu e-mail" required>
+	</label>
+
+	<label>
+		Senha:
+		<input type="password" name="password" id="senha" placeholder="Digite sua senha" required>
+	</label>
+
+	<button type="submit">Salvar</button>
+</form>
+<%- include('./parts/foot'); %>

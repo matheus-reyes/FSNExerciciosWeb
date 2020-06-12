@@ -1,35 +1,37 @@
-const tarefas = [
-    {
-        id: 1,
-        prioridade: 1,
-        texto: "Desenvolver HTML",
-        feita: true
-    },
-    {
-        id: 2,
-        prioridade: 2,
-        texto: "Criar Javascript",
-        feita: true
-    },
-    {
-        id: 3,
-        prioridade: 1,
-        texto: "Linkar Javascript no HTML",
-        feita: true
-    },
-    {
-        id: 4,
-        prioridade: 3,
-        texto: "Criar Funções no Javascript",
-        feita: false
-    },
-    {
-        id: 5,
-        prioridade: 2,
-        texto: "Testar Funções",
-        feita: false
-    }
-]
+// const tarefas = [
+//     {
+//         id: 1,
+//         prioridade: 1,
+//         texto: "Desenvolver HTML",
+//         feita: true
+//     },
+//     {
+//         id: 2,
+//         prioridade: 2,
+//         texto: "Criar Javascript",
+//         feita: true
+//     },
+//     {
+//         id: 3,
+//         prioridade: 1,
+//         texto: "Linkar Javascript no HTML",
+//         feita: true
+//     },
+//     {
+//         id: 4,
+//         prioridade: 3,
+//         texto: "Criar Funções no Javascript",
+//         feita: false
+//     },
+//     {
+//         id: 5,
+//         prioridade: 2,
+//         texto: "Testar Funções",
+//         feita: false
+//     }
+// ]
+
+const tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
 
 const table = document.getElementById("table");
 
@@ -50,6 +52,9 @@ function mostrarTarefa(t){
     // Adicionando Listener para marcar a tarefa
     checkbox.addEventListener('click', (evt) => {
         t.feita = !t.feita;
+
+        localStorage.setItem("tarefas", JSON.stringify(tarefas));
+
         let tr = checkbox.parentNode.parentNode;
         tr.classList.toggle("done");
     });
@@ -122,11 +127,13 @@ function mostrarTarefas(tarefas){
 function removeTarefaPeloId(id){
     let pos = tarefas.findIndex(t => t.id == id);
     tarefas.splice(pos, 1);
+    localStorage.setItem("tarefas", JSON.stringify(tarefas));
 }
 
 function mudaStatusTarefaPeloId(id){
     let t = tarefas.find(t => t.id == id);
     t.feita = !t.feita;
+    localStorage.setItem("tarefas", JSON.stringify(tarefas));
 }
 
 function adicionarTarefa(texto){
@@ -153,6 +160,8 @@ function adicionarTarefa(texto){
     }
 
     tarefas.push(t);
+
+    localStorage.setItem("tarefas", JSON.stringify(tarefas));
 
     mostrarTarefa(t);
 }

@@ -1,4 +1,4 @@
-# FSN-exercicios-web
+# FSNExerciciosWeb
 Exercícios de programação WEB Full Stack Node Digital House
 <h2> <b> DC Heroes </b> </h2>
 Exercício de front-end utilizando HTML e CSS para estilização de alguns heróis da DC
